@@ -135,8 +135,8 @@ a {
 .home-img .img-box::after{
   position:absolute;
   content:'';
-  height:500px;
-  width:500px;
+  height: 500px;
+  width: 500px;
   background:conic-gradient(transparent,transparent,transparent,#7cf03d);
 }
 
@@ -158,8 +158,8 @@ a {
   position: absolute;
   top :40px;
   display: block;
-  width: auto;
-  height: auto;
+  width: 50px;
+  height: 50px;
   object-fit: cover; /* Fills the container */
   object-position: center; /* Centers the image */
   mix-blend-mode: lighten;
