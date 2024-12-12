@@ -23,26 +23,44 @@
         </ul>
     </nav>
 
-    <section class="Home">
-        <div  class="home-info">
-            <h1>Feqinansyah Gerizepta Mahendra</h1>
-            <h2>I'm a Civil Engineering</h2>
-            <p> ada dds ddasdj sd ad asd ass jak dakjd as kasjd jkd asdjk ajdkas jaks dasjkd jkd asdjkasjdiwfajfas.</p>
+    <div class="bars-animation">
+        <div class="bar" style="--i:6;"></div>
+        <div class="bar" style="--i:5;"></div>
+        <div class="bar" style="--i:4;"></div>
+        <div class="bar" style="--i:3;"></div>
+        <div class="bar" style="--i:2;"></div>
+        <div class="bar" style="--i:1;"></div>
+    </div>
+
+    <section class="home">
+        <div class="home-info">
+            <h1>Reynaldi Himawan Fanani</h1>
+            <h2>I'm a 
+                <span style="--i:4;" data-text="Web Developer">Web Developer</span>
+                <span style="--i:3;" data-text="Content Creator">Content Creator</span>
+                <span style="--i:2;" data-text="Videografer">Videografer</span>
+                <span style="--i:1;" data-text="Video Editor">Video Editor</span>
+            </h2>
+            <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae necessitatibus ab quia voluptatibus
+                nesciunt iste id qui maxime quasi distinctio, eveniet exercitationem, porro quam deleniti laudantium
+                consequuntur. Sint, dignissimos dicta!</p>
             <div class="btn-sci">
-                <a href="#" class="btn">Download CV</a>   
+                <a href="#" class="btn">Download CV</a>
                 <div class="sci">
                     <a href="#"><i class='bx bxl-instagram'></i></a>
-                    <a href="#"><i class='bx bxl-linkedin' ></i></a>
-                    <a href="#"><i class='bx bxl-twitter' ></i></a>
-                    <a href="#"><i class='bx bxl-steam' ></i></a>
+                    <a href="#"><i class='bx bxl-github'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-steam'></i></a>
                 </div>
-            </div>    
+            </div>
         </div>
 
         <div class="home-img">
             <div class="img-box">
                 <div class="img-item">
-                    <img src="home.png" alt="">
+                    {{-- <img src="{{ asset('images/home.png') }}" alt=""> --}}
+                    <img src="{{ Vite::asset('resources/images/foto.png') }}" alt="">
                 </div>
             </div>
         </div>
