@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" Content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Personal Portofolio Website Using HTML & CSS Codehal</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="Stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo">Portofolio.</a>
+        <ul>
+            <li class="active"><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+   
+
+    <div class="bars-animation">
+        <div class="bar" style="--i:6;"></div>
+        <div class="bar" style="--i:5;"></div>
+        <div class="bar" style="--i:4;"></div>
+        <div class="bar" style="--i:3;"></div>
+        <div class="bar" style="--i:2;"></div>
+        <div class="bar" style="--i:1;"></div>
+    </div>
+
+    <section class="home" id="home">
+        <div class="home-info">
+            <h1>Reynaldi Himawan Fanani</h1>
+            <h2>I'm a 
+                <span style="--i:4;" data-text="Web Developer">Web Developer</span>
+                <span style="--i:3;" data-text="Content Creator">Content Creator</span>
+                <span style="--i:2;" data-text="Videografer">Videografer</span>
+                <span style="--i:1;" data-text="Video Editor">Video Editor</span>
+            </h2>
+            <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae necessitatibus ab quia voluptatibus
+                nesciunt iste id qui maxime quasi distinctio, eveniet exercitationem, porro quam deleniti laudantium
+                consequuntur. Sint, dignissimos dicta!</p>
+            <div class="btn-sci">
+                <a href="#" class="btn">Download CV</a>
+                <div class="sci">
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-github'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-steam'></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-img">
+            <div class="img-box">
+                <div class="img-item">
+                    <img src="images/foto.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="home" id="portfolio">
+        <h2 class="section-title">My Portfolio</h2>
+        <div class="portfolio-container">
+            <div class="portfolio-item">
+                <img src="images/foto1.jpg" alt="Project 1" class="portfolio-img">
+                <div class="canvas-overlay">
+                    <div class="portfolio-info">
+                        <h3>Project 1</h3>
+                        <p>Description of the project goes here. A short overview of the work and its purpose.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="images/foto2.jpg" alt="Project 2" class="portfolio-img">
+                <div class="canvas-overlay">
+
+                    <div class="portfolio-info">
+                        <h3>Project 2</h3>
+                        <p>Description of the project goes here. A short overview of the work and its purpose.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="images/foto3.jpg" alt="Project 3" class="portfolio-img">
+                <div class="canvas-overlay">
+
+                    <div class="portfolio-info">
+                        <h3>Project 3</h3>
+                        <p>Description of the project goes here. A short overview of the work and its purpose.</p>
+                    </div>
+                </div>
+                </div>
+            <div class="portfolio-item">
+                <img src="images/foto4.jpg" alt="Project 4" class="portfolio-img">
+                <div class="canvas-overlay">
+
+                    <div class="portfolio-info">
+                        <h3>Project 4</h3>
+                        <p>Description of the project goes here. A short overview of the work and its purpose.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+
+</body>
+
+<script>
+    // Get all the navbar items
+const sections = document.querySelectorAll('section');
+
+// Create an observer for each section to detect when it enters the viewport
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
+        const navItem = document.querySelector(`.navbar ul li a[href="#${id}"]`).parentElement;
+        
+        if (entry.isIntersecting) {
+            // Add 'active' class when the section is in the viewport
+            navItems.forEach(item => item.classList.remove('active'));
+            navItem.classList.add('active');
+        }
+    });
+}, { threshold: 0.5 }); // Trigger when 50% of the section is in view
+
+// Observe each section
+sections.forEach(section => {
+    observer.observe(section);
+});
+
+    // Select the section
+const homeSection = document.querySelector('.home');
+
+// Example: Add a class when the section is in the viewport
+window.addEventListener('scroll', () => {
+    if (homeSection.getBoundingClientRect().top < window.innerHeight) {
+        homeSection.classList.add('active');
+    } else {
+        homeSection.classList.remove('active');
+    }
+});
+
+// Get all the list items inside the navbar
+const navItems = document.querySelectorAll('.navbar ul li');
+
+// Loop through each item and add a click event listener
+navItems.forEach(item => {
+    item.addEventListener('click', function(event) {
+        // Prevent the default link behavior (if it's an anchor tag)
+        event.preventDefault();
+        
+        // Remove the "active" class from all items
+        navItems.forEach(item => item.classList.remove('active'));
+        
+        // Add the "active" class to the clicked item
+        this.classList.add('active');
+        
+        // Get the target section
+        const targetId = this.querySelector('a').getAttribute('href').substring(1); // Remove the '#' from href
+        const targetSection = document.getElementById(targetId);
+        
+        // Scroll to the target section with smooth scroll
+        targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+});
+
+
+
+</script>
+</html>
